@@ -145,6 +145,9 @@ done</code></pre>
 <span class="kw">do</span>
     <span class="kw">cp</span> <span class="ot">$filename</span> original-<span class="ot">$filename</span>
 <span class="kw">done</span></code></pre>
+<div class="figure">
+<img src="fig/shell_script_for_loop_flow_chart.svg" alt="For loop in action" /><p class="caption">For loop in action</p>
+</div>
 <p>This loop runs the <code>cp</code> command once for each filename. The first time, when <code>$filename</code> expands to <code>basilisk.dat</code>, the shell executes:</p>
 <pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">cp</span> basilisk.dat original-basilisk.dat</code></pre>
 <p>The second time, the command is:</p>
@@ -166,18 +169,7 @@ cp unicorn.dat original-unicorn.dat</code></pre>
 </div>
 </aside>
 <h2 id="nelles-pipeline-processing-files">Nelle’s Pipeline: Processing Files</h2>
-<p>Nelle is now ready to process her data files. Since she’s still learning how to use the shell, she decides to build up the required commands in stages. Her first step is to make sure that she can select the right files — remember, these are ones whose names end in ‘A’ or ‘B’, rather than ‘Z’. Starting from her home directory, Nelle types:</p>
-<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">cd</span> north-pacific-gyre/2012-07-03
-$ <span class="kw">for</span> <span class="kw">datafile</span> in *[AB].txt
-<span class="kw">&gt;</span> <span class="kw">do</span>
-<span class="kw">&gt;</span>     <span class="kw">echo</span> <span class="ot">$datafile</span>
-<span class="kw">&gt;</span> <span class="kw">done</span></code></pre>
-<pre class="output"><code>NENE01729A.txt
-NENE01729B.txt
-NENE01736A.txt
-...
-NENE02043A.txt
-NENE02043B.txt</code></pre>
+<p>Nelle is now ready to process her data files. Since she’s still learning how to use the shell, she decides to build up the required commands in stages. Her first step is to make sure that she can select the right files — remember, these are ones whose names end in ‘A’ or ‘B’, rather than ‘Z’. Starting from her home directory, Nelle types: <sub>~</sub> {.bash} $ cd north-pacific-gyre/2012-07-03 $ for datafile in *[AB].txt &gt; do &gt; echo $datafile &gt; done <sub><sub><sub> </sub></sub></sub> {.output} NENE01729A.txt NENE01729B.txt NENE01736A.txt … NENE02043A.txt NENE02043B.txt <sub>~</sub></p>
 <p>Her next step is to decide what to call the files that the <code>goostats</code> analysis program will create. Prefixing each input file’s name with “stats” seems simple, so she modifies her loop to do that:</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">for</span> <span class="kw">datafile</span> in *[AB].txt
 <span class="kw">&gt;</span> <span class="kw">do</span>
