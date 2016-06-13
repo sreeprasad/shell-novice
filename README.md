@@ -1,7 +1,7 @@
 shell-novice
 ============
 
-First encounter with the Unix shell.  Lesson website is [here](http://swcarpentry.github.io/shell-novice/).
+First encounter with the Unix shell.  Lesson website is [here](http://uwescience.github.io/shell-novice/).
 
 Interested in contributing?  Please see our [Guidelines for Contributors](CONTRIBUTING.md).
 
